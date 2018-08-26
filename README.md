@@ -20,11 +20,11 @@ Command lines of sweep detection for selection regime CS of generation 65, all o
 
 [05.TE.sh]
 
-Command lines of (transposoble element) TE identification for selection regime CS of generation 65
+Command lines of (transposoble element) TE identification for selection regime CS of generation 65.
 
 [06.PCA.sh]
 
-Command lines for PCA using eigensoft (https://www.hsph.harvard.edu/alkes-price/software/)
+Command lines for PCA using eigensoft (https://www.hsph.harvard.edu/alkes-price/software/).
 
 [07.haplotypeBlockReconstruction.sh]
 
