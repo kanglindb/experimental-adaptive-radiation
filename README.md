@@ -1,4 +1,4 @@
-# This folder contains scripts and command lines used in an experimental-adaptive-radiation project (Genomic signatures of experimental adaptive radiation in Drosophila). Please note that some of scripts and command lines might be restrictive and can run exclusively on VT ARC cluster (www.arc.vt.edu).
+This folder contains scripts and command lines used in an experimental-adaptive-radiation project (Genomic signatures of experimental adaptive radiation in Drosophila). Please note that some of scripts and command lines might be restrictive and can run exclusively on VT ARC cluster (www.arc.vt.edu).
 
 Content:
 01.mappingAndGenotyping.sh
