@@ -1,0 +1,9 @@
+genotypename:    all.eigensoft.genotype 
+snpname:         all.eigensoft.snp
+indivname:       all.eigensoft.indiv
+evecoutname:     fly.evec
+evaloutname:     fly.eval
+altnormstyle:    NO
+numoutevec:      5
+familynames:     NO
+grmoutname:      grm
