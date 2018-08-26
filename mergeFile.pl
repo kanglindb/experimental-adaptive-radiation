@@ -10,7 +10,7 @@ usage:
         example: perl $0 in1.file in2.file in3.file ... > merge.file
 description:
         function for merging files by keys.
-        (2013-12-20) first version
+        (2017-12-20) first version
 options:
         -help      : print help info;
         -k(str)    : key index default, multiple indices separated by COMMA (e.g 1,2), default: 1;
