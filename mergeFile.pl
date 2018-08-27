@@ -72,10 +72,10 @@ sub merge {
     &showLog("read file $file");
     open FILE, $file or print "cant open file $file!\n";
     while (<FILE>) {
-        chomp;
+    	chomp;
 	my @line = split("\t", $_);
 	my $key = &getKey($keyPos, \@line);
-        my $supContent = "-";
+	my $supContent = "-";
 	for (my $i = 2; $i < scalar(@line); $i++) {
             $supContent .= "\t-";
         }
