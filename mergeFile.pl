@@ -70,39 +70,39 @@ sub merge {
     &showLog("read file $file");
     open FILE, $file or print "cant open file $file!\n";
     while (<FILE>) {
-    	chomp;
-		my @line = split("\t", $_);
-		my $key = &getKey($keyPos, \@line);
-		my $supContent = "-";
-		for (my $i = 2; $i < scalar(@line); $i++) {
-			$supContent .= "\t-";
-		}
-		my $content = join("\t", @line);
-		if (!($flag)) {
-			my @tmp_line = @line;
-			my @keys = split(",", $keyPos);
-			foreach my $index (@keys) {
-				$tmp_line[$index - 1] = "";
-			}
-			$content = join("\t", @tmp_line);
-		}
-		if (defined $outPos) {
-			$content = &getKey($outPos, \@line);
-			my @tmp_line = split("", "----------------------------------------------------------------------");
-			$supContent = &getKey($outPos, \@tmp_line);
-		}
-		if (exists($hash{$key})) {
-			$hash_count{$key}++;
-			$hash{$key}[$index] = $content;
-		} else {
-			for (my $j = 0; $j <= $#ARGV; $j++) {
-				push(@{$hash{$key}}, $supContent);
-			}
-			$hash_count{$key} = 1;
-			$hash{$key}[$index] = $content;
-		}
-	}
-	close FILE;
+        chomp;
+        my @line = split("\t", $_);
+        my $key = &getKey($keyPos, \@line);
+        my $supContent = "-";
+        for (my $i = 2; $i < scalar(@line); $i++) {
+            $supContent .= "\t-";
+        }
+        my $content = join("\t", @line);
+        if (!($flag)) {
+            my @tmp_line = @line;
+            my @keys = split(",", $keyPos);
+            foreach my $index (@keys) {
+                $tmp_line[$index - 1] = "";
+            }
+            $content = join("\t", @tmp_line);
+        }
+        if (defined $outPos) {
+            $content = &getKey($outPos, \@line);
+            my @tmp_line = split("", "----------------------------------------------------------------------");
+            $supContent = &getKey($outPos, \@tmp_line);
+        }
+        if (exists($hash{$key})) {
+            $hash_count{$key}++;
+            $hash{$key}[$index] = $content;
+        } else {
+            for (my $j = 0; $j <= $#ARGV; $j++) {
+                push(@{$hash{$key}}, $supContent);
+            }
+            $hash_count{$key} = 1;
+            $hash{$key}[$index] = $content;
+        }
+    }
+    close FILE;
 }
 
 sub getKey {
