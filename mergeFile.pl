@@ -19,9 +19,9 @@ USAGE
 
 my $keyPos = 1;
 my $help;
-my $repeatFlag = 0;
-my $flag = 0;
-my $outPos;
+my $repeatFlag = 0; ### flag for outputing lines shared by all input files only
+my $flag = 0; ### flag for outputing the original content from each input file, by default, the index column(s) will be printed only once
+my $outPos; ### if defined, only output the #$outPos columns from each file 
 
 GetOptions(
     "help"=>\$help,
@@ -48,9 +48,7 @@ foreach my $file (@files) {
 &showLog("output file");
 print STDERR "count: $count\n";
 foreach my $key (sort {$a cmp $b} keys %hash) {
-    if ($repeatFlag && $hash_count{$key} <= $#ARGV) {
-    next;
-    }
+    next if ($repeatFlag && $hash_count{$key} <= $#ARGV);
     if ($flag) {
         for (my $j = 0; $j <= $#ARGV - 1; $j++) {
             print $hash{$key}[$j], "\t";
@@ -73,10 +71,10 @@ sub merge {
     open FILE, $file or print "cant open file $file!\n";
     while (<FILE>) {
     	chomp;
-	my @line = split("\t", $_);
-	my $key = &getKey($keyPos, \@line);
-	my $supContent = "-";
-	for (my $i = 2; $i < scalar(@line); $i++) {
+		my @line = split("\t", $_);
+		my $key = &getKey($keyPos, \@line);
+		my $supContent = "-";
+		for (my $i = 2; $i < scalar(@line); $i++) {
             $supContent .= "\t-";
         }
         my $content = join("\t", @line);
@@ -93,7 +91,7 @@ sub merge {
             my @tmp_line = split("", "----------------------------------------------------------------------");
             $supContent = &getKey($outPos, \@tmp_line);
         }
-	if (exists($hash{$key})) {
+		if (exists($hash{$key})) {
             $hash_count{$key}++;
             $hash{$key}[$index] = $content;
     	} else {
@@ -102,7 +100,7 @@ sub merge {
             }
             $hash_count{$key} = 1;
             $hash{$key}[$index] = $content;
-	}
+		}
     }
     close FILE;
 }
