@@ -6,7 +6,7 @@ Columns:
 2        : position
 3        : reference
 4        : haplotype block ID; ID with "rHB" indicates haplotype block with 2 or more rig-PSIs; "-" indicates non-haplotype-block
-5-(N+4)  : allele frequencies of samples 1 to N
+5..(N+4) : allele frequencies of samples 1 to N
 
 
 Files were given by each selection rigime (CS, DS, HS, KS, and SS). Each file contains information of 15 samples for a given selection 
