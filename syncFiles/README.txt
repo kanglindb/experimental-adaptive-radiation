@@ -1,5 +1,5 @@
-This folder contains information of PSIs and rig-PSIs in modified sync format with one additional 4th column (details about the sync file 
-format please refer to https://code.google.com/archive/p/popoolation2/wikis/Tutorial.wiki) described as following:
+This folder contains information of PSIs and rig-PSIs in modified sync format with one additional 4th column (details about the sync 
+file format please refer to https://code.google.com/archive/p/popoolation2/wikis/Tutorial.wiki) described as following:
 
 Columns:
 1:         chromosome
